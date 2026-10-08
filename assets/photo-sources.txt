@@ -1,6 +1,5 @@
 Public profile-photo sources added 2026-10-08:
 - Chao Huang: https://datascience.hku.hk/people/chao-huang/
-- Han Zhu: https://dlp-kdd2022.github.io/index.html
 - Jujia Zhao: https://polaris-jz.github.io/images/photo.jpeg
 - Xinyu Lin: https://linxyhaha.github.io/images/xinyu-1.jpeg
 - Maarten de Rijke: https://www.uva.nl/en/about-the-uva/organisation/professors/university-professors/maarten-de-rijke.html
