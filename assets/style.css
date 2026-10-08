@@ -49,7 +49,7 @@ button { font: inherit; }
 .site-header.is-scrolled { border-color: rgba(198,213,221,.9); background: rgba(255,255,255,.94); box-shadow: 0 10px 28px rgba(20,44,59,.09); }
 .header-inner { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
 .brand { display: inline-flex; align-items: center; gap: 12px; color: var(--ink-strong); text-decoration: none; font-weight: 800; letter-spacing: -.02em; }
-.brand-mark { width: 42px; height: 42px; display: grid; place-items: center; flex: 0 0 auto; border: 1px solid rgba(13,119,116,.25); border-radius: 50%; color: var(--teal-dark); background: linear-gradient(145deg, #fff 12%, #e4f5f2 100%); box-shadow: 0 7px 18px rgba(13,119,116,.12); font-size: .68rem; letter-spacing: .07em; }
+.brand-mark { width: 42px; height: 42px; display: grid; place-items: center; flex: 0 0 auto; border: 2px solid #b8d8d6; border-radius: 50%; color: var(--teal-dark); background: transparent; box-shadow: none; font-size: .68rem; letter-spacing: .07em; }
 .brand-copy { display: grid; line-height: 1.05; }
 .brand-copy small { margin-top: 5px; color: var(--muted); font-size: .69rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 .site-nav { display: flex; align-items: center; gap: 3px; padding: 5px; border: 1px solid rgba(198,213,221,.7); border-radius: 999px; background: rgba(246,248,250,.7); box-shadow: inset 0 1px 0 rgba(255,255,255,.85); }
@@ -336,4 +336,41 @@ h1, h2, h3 { margin-top: 0; text-wrap: balance; }
   .date-item span { margin-top: 0; font-size: .96rem; }
   .page-hero { padding: 56px 0; }
   .section { padding: 66px 0; }
+}
+
+/* Homepage scroll-following section navigation. */
+#overview, #about, #dates, #topics, #speakers, #organizers, #submission { scroll-margin-top: 96px; }
+.section-rail {
+  position: fixed;
+  top: 50%;
+  right: max(18px, calc((100vw - 1480px) / 2));
+  z-index: 32;
+  display: grid;
+  width: 132px;
+  padding: 13px 10px 12px;
+  transform: translateY(-50%);
+  border: 1px solid rgba(198,213,221,.82);
+  border-radius: 20px;
+  background: rgba(255,255,255,.86);
+  -webkit-backdrop-filter: blur(16px) saturate(145%);
+  backdrop-filter: blur(16px) saturate(145%);
+  box-shadow: 0 14px 34px rgba(20,44,59,.13);
+}
+.section-rail-title { padding: 0 8px 8px; color: var(--muted); font-size: .61rem; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.section-rail a { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 34px; padding: 7px 8px; border-radius: 11px; color: var(--muted); text-decoration: none; font-size: .75rem; font-weight: 750; line-height: 1; transition: color .18s ease, background .18s ease, transform .18s ease; }
+.section-rail a:hover, .section-rail a:focus-visible { color: var(--teal-dark); background: rgba(228,245,242,.62); }
+.section-rail a.is-active { color: var(--teal-dark); background: var(--teal-soft); transform: translateX(-2px); }
+.section-rail i { width: 7px; height: 7px; flex: 0 0 auto; border: 1.5px solid #92a9b4; border-radius: 50%; background: white; transition: border-color .18s ease, background .18s ease, box-shadow .18s ease, transform .18s ease; }
+.section-rail a.is-active i { border-color: var(--teal); background: var(--teal); box-shadow: 0 0 0 4px rgba(13,119,116,.13); transform: scale(1.08); }
+
+@media (max-width: 1380px) {
+  .section-rail { right: 14px; width: 46px; padding: 10px 7px; border-radius: 17px; }
+  .section-rail-title, .section-rail a span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .section-rail a { justify-content: center; min-height: 34px; padding: 7px; }
+  .section-rail a::before { content: attr(data-section-link); position: absolute; right: calc(100% + 10px); padding: 7px 9px; border-radius: 8px; color: white; background: var(--ink-strong); box-shadow: var(--shadow); font-size: .7rem; text-transform: capitalize; opacity: 0; pointer-events: none; transform: translateX(5px); transition: opacity .16s ease, transform .16s ease; }
+  .section-rail a:hover::before, .section-rail a:focus-visible::before { opacity: 1; transform: none; }
+}
+
+@media (max-width: 1080px) {
+  .section-rail { display: none; }
 }
