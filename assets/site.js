@@ -1,6 +1,15 @@
 (function () {
+  const header = document.querySelector('.site-header');
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.site-nav');
+
+  if (header) {
+    const syncHeader = function () {
+      header.classList.toggle('is-scrolled', window.scrollY > 12);
+    };
+    syncHeader();
+    window.addEventListener('scroll', syncHeader, { passive: true });
+  }
 
   if (!toggle || !nav) return;
 
