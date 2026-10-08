@@ -1,6 +1,8 @@
 # AOE@WSDM 2027 Workshop Website
 
-Static website for the Workshop on Agent-in-the-Loop Optimization for E-commerce AI Systems (AOE) at WSDM 2027.
+Official website for the Workshop on Agent-in-the-Loop Optimization for E-commerce AI Systems (AOE) at WSDM 2027.
+
+**Live site:** https://aoe-wsdm2027.github.io/
 
 ## Current content source
 
@@ -16,11 +18,8 @@ python3 -m http.server 8000
 
 Then visit `http://localhost:8000`.
 
-## Publish with GitHub Pages
+## Deployment
 
-1. Upload the repository files to the default branch.
-2. Open **Settings → Pages** in the GitHub repository.
-3. Under **Build and deployment**, choose **Deploy from a branch**.
-4. Select the default branch and the `/ (root)` folder, then save.
+The public repository is `aoe-wsdm2027/aoe-wsdm2027.github.io`. GitHub Pages publishes the static files from the `main` branch at the organization site URL above. The site is self-contained and does not require a build step.
 
-The site is self-contained and does not require a build step. New public portrait sources are recorded in `assets/photo-sources.txt`.
+New public portrait sources are recorded in `assets/photo-sources.txt`.
