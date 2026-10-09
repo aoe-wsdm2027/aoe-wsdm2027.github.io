@@ -25,6 +25,11 @@
       sections.forEach(function (section) {
         if (section.offsetTop <= marker) activeId = section.id;
       });
+      const pageBottom = window.scrollY + window.innerHeight;
+      const documentBottom = document.documentElement.scrollHeight;
+      if (sections.length && pageBottom >= documentBottom - 32) {
+        activeId = sections[sections.length - 1].id;
+      }
       railLinks.forEach(function (link) {
         const active = link.dataset.sectionLink === activeId;
         link.classList.toggle('is-active', active);
